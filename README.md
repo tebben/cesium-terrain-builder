@@ -1,3 +1,15 @@
+# Fork
+
+This is a fork from [https://github.com/ahuarte47/cesium-terrain-builder](https://github.com/ahuarte47/cesium-terrain-builder) with [Quantized-mesh output support](https://github.com/geo-data/cesium-terrain-builder/pull/64)
+
+The original code was unable to build running `mkdir build && cd build && cmake .. && make install` on a machine with a newer version of GDAL. This results in `‘CPLErr GDALOverviewBand::FlushCache()’ marked ‘override’, but does not override`. An update to `gdaloverviewdataset.cpp` fixed the issue.
+
+Testing the script from [geodan/terrain](https://github.com/Geodan/terrain/blob/main/tiler/process.sh) on our locally build Cesium-Terrain-Builder resulted in a working terrain for Cesium.
+
+> **Note:** Nothing else was tested running on a newer version of GDAL
+
+![terrain in cesium](img/terrain.jpg)
+
 # Cesium Terrain Builder
 
 This is a C++ library and associated command line tools designed to create
